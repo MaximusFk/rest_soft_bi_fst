@@ -5,24 +5,22 @@ import java.sql.Date;
 public class Article extends ABaseEntity {
 	
 	private int id;
+	private Integer authorId;
 	private String title;
 	private String label;
 	private String text;
-	private Date date;
-	private Integer authorId;
+	private Date created_date;
 	
 	public Article() {
-		this.title = "";
-		this.label = "";
-		this.text = "";
+		
 	}
 
-	public Article(int id, String title, String label, String text, Date date, Integer authorId) {
+	public Article(int id, Integer authorId, String title, String label, String text, Date date) {
 		this.id = id;
 		this.title = title;
 		this.label = label;
 		this.text = text;
-		this.date = date;
+		this.created_date = date;
 		this.authorId = authorId;
 	}
 
@@ -60,11 +58,11 @@ public class Article extends ABaseEntity {
 	}
 
 	public Date getDate() {
-		return date;
+		return created_date;
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		this.created_date = date;
 	}
 
 	public Integer getAuthorId() {
@@ -83,7 +81,7 @@ public class Article extends ABaseEntity {
 				.append(", title=" + title)
 				.append(", label=" + label)
 				.append(", text=" + text)
-				.append(", date=" + date.toString())
+				.append(", date=" + created_date.toString())
 				.append(", authorId=" + authorId)
 				.append('}')
 				.toString();

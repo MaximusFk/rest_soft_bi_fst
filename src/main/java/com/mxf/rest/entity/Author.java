@@ -7,8 +7,7 @@ public class Author extends ABaseEntity {
 	private String email;
 	
 	public Author() {
-		this.name = "";
-		this.email = "";
+		
 	}
 
 	public Author(int id, String name, String email) {
